@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARC Website</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; overflow-x: hidden; }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+
+    /* Left Glass Panel */
+    .glass-sidebar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      bottom: 20px;
+      width: 220px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      z-index: 2;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+
+  .nav-links button { width: 100%; padding: 12px; margin: 10px 0; background: rgba(255, 255, 255, 0.2); border: none; border-radius: 12px; color: white; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; } 
+  .nav-links button:hover { background: rgba(255, 255, 255, 0.4); color: black; }
+
+    /* ARC in Center */
+    .arc-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 120px;
+      font-weight: 900;
+      color: white;
+      text-shadow: 0 0 30px rgba(0,0,0,0.6);
+      z-index: 2;
+    }
+
+    /* Overlay for Members */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(17, 17, 17, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      padding: 40px;
+      z-index: 5;
+    }
+
+    .member-card {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px 0;
+      width: 80%;
+      max-width: 800px;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+
+    .close-btn {
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      background: #ff4d4d;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .logo img {
+  width: 140px;   /* slightly bigger */
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Hero with Vanta background -->
+  <div class="hero" id="hero">
+
+<div class="glass-sidebar">
+  <div class="logo">
+    <img src="ARC Logo - 1.png" alt="ARC Logo">
+  </div>
+  <div class="nav-links">
+    <button onclick="showOverlay()">Members</button>
+    <button>Projects</button>
+    <button>Events</button>
+  </div>
+</div>
+
+    <!-- ARC in Middle -->
+    <h1 class="arc-title">ARC</h1>
+  </div>
+
+  <!-- Overlay Members List -->
+  <div class="overlay" id="membersOverlay">
+    <button class="close-btn" onclick="hideOverlay()">Close</button>
+    
+    <!-- Example Member Cards -->
+    <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Melrick Dsouza</h3>
+        <p>Role: President</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Mohammad Afeef</h3>
+        <p>Role: Vice President</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    
+      <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Priyana Dsouza </h3>
+        <p>Role: social</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Adithya</h3>
+        <p>Role: board Member</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    
+      <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Shalton</h3>
+        <p>Role: Documentation Head</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Luke Noronah</h3>
+        <p>Role: Financial Head</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    
+    
+      <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Sherwin </h3>
+        <p>Role: rbg</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Amisha Dsouza</h3>
+        <p>Role: Documentation & Operational Head </p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    
+    
+      <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Stalon Joyal Dsouza</h3>
+        <p>Role: Operational Head</p>
+        <p>Email: stalonjdsouza@gmail.com</p>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="https://via.placeholder.com/100" alt="Member">
+      <div>
+        <h3>Vernon Dantes</h3>
+        <p>Role: Research Head</p>
+        <p>Email: gmail.com</p>
+      </div>
+    </div>
+    <!-- Repeat until 20 members -->
+  </div>
+
+  <!-- Vanta.js Background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <script>
+    VANTA.GLOBE({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x574c83,
+      color2: 0xf9e70d,
+      size: 1.30,
+      backgroundColor: 0x111111
+    })
+
+    // Show/Hide Members Overlay
+    function showOverlay() {
+      document.getElementById("membersOverlay").style.display = "flex";
+    }
+    function hideOverlay() {
+      document.getElementById("membersOverlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+
